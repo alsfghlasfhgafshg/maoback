@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mao.Dao.UserDao">
+    <!-- 这里的id必须和UserMapper接口中的接口方法名相同 -->
+    <select id="findUserByOpenid" resultType="com.mao.Entity.User" parameterType="java.lang.String">
+        select * from user where uid=#{openid}
+    </select>
+    <insert id="insertUser" parameterType="com.mao.Entity.User">
+        insert into user(sessionkey,create_time,encodepassword,openid,uaddress,uavatar,ugender,nickname) values (#{sessionkey},#{createTime},#{encodepassword},#{openid},#{uaddress},#{uavatar},#{ugender},#{nickname})
+    </insert>
+    <select id="findById" resultType="com.mao.Entity.User">
+        select * from user where id=#{id}
+    </select>
+</mapper>
