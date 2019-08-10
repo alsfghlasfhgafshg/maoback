@@ -18,8 +18,14 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     JwtAuthorizationFilter jwtAuthorizationFilter;
 
+    @Autowired
+    JwtLoginAuthorizationManager jwtAuthorizationManager;
 
-
+    JwtLoginAuthorizationFilter jwtAuthorizationFilter(JwtLoginAuthorizationManager jwtAuthorizationManager) {
+        JwtLoginAuthorizationFilter filter = new JwtLoginAuthorizationFilter("/auth/wxlogin");
+        filter.setAuthenticationManager(jwtAuthorizationManager);
+        return filter;
+    }
 
     // 设置 HTTP 验证规则
     @Override
