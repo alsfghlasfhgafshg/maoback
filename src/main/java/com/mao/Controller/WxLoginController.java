@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/auth")
 public class WxLoginController {
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public void login(){
+    @RequestMapping(value = "/wxlogin")
+    public void wxlogin(){
         return;
     }
 }
