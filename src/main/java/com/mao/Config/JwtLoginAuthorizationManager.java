@@ -2,6 +2,7 @@ package com.mao.Config;
 
 import com.mao.Dao.UserDao;
 import com.mao.Service.JWTService;
+import com.mao.Service.NotificationService;
 import com.mao.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,6 +26,11 @@ public class JwtLoginAuthorizationManager implements AuthenticationManager {
 
     @Autowired
     UserDao userDao;
+
+    @Autowired
+    NotificationService notificationService;
+
+    @Autowired
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
