@@ -45,7 +45,6 @@ public class JwtLoginAuthorizationManager implements AuthenticationManager {
         if (openid == null) {
             System.out.println("verify fail");
         } else {
-
             UserDetails user = userDao.findUserByOpenid(openid);
             if (user == null) {
                 notificationService.insertSystemNotification(openid,"欢迎来到读书分享");
