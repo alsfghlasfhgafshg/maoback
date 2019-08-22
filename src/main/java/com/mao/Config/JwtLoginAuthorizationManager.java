@@ -29,9 +29,6 @@ public class JwtLoginAuthorizationManager implements AuthenticationManager {
 
     @Autowired
     NotificationService notificationService;
-
-    @Autowired
-
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String js_code = (String) authentication.getCredentials();
